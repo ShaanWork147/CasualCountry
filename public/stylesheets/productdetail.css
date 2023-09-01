@@ -5,10 +5,7 @@
     justify-content: space-around;
 }
 
-.row-productAnother{
-    /* align-items: center !important; 
-    justify-content: center; */
-}
+
 .cat {
     display: flex;
     flex-wrap: wrap;
@@ -172,7 +169,7 @@
 
 .col-2-product-small img {
     width: 156px;
-    height: 173px;
+    height: auto;
     float: right;
     /* padding-bottom: 33px; */
 }
