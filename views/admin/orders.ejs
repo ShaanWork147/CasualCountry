@@ -26,6 +26,8 @@
                       <a href="/admin/navbar" class="nav-item nav-link">Navbar</a>
                       <a href="/admin/wholesaletabs" class="nav-item nav-link">WholeSale</a>
                       <a href="/admin/quotations" class="nav-item nav-link bg-active">Orders</a>
+              
+                      <a href="/user/all" class="nav-item nav-link">Signup Record</a>
 
                   </div>
               </nav>
@@ -53,6 +55,8 @@
         <p><span>Quantity:</span> <%= quotation.quantity %></p>
         <p><span>Quotation Date-Time:</span> <%= quotation.createdAt.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }) %></p>
           <% if (quotation.user) { %>
+            <p><span>Name:</span> <%= quotation.user.Firstname %> <%= quotation.user.Lastname %></p>
+            <p><span>Company Name:</span> <%= quotation.user.companyname %></p>
             <p><span>Contact Number:</span> <%= quotation.user.phone %></p>
             <p><span>Email:</span> <%= quotation.user.email %></p>
           <% } %>

@@ -44,6 +44,15 @@ router.post('/user/signup', wrapAsync( async (req, res, next) => {
       })
   });
 }));
+
+// Route to fetch all signed-up user data and render the EJS template
+router.get('/user/all', wrapAsync(async (req, res) => {
+  // Use Mongoose to fetch all user documents from the User model
+  const allUsers = await User.find({});
+  
+  // Render the EJS template and pass the user data as a variable
+  res.render('./admin/userlist', { users: allUsers });
+}));
 router.get('/user/logout', function(req, res, next) {
   req.logout(function(err) {
     if (err) { return next(err); }

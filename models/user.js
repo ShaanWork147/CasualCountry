@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  companyname: {
+    type: String,
+    required: true,
+  },
 });
 
 // Set email as the username field for authentication
