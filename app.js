@@ -14,7 +14,7 @@ const flash = require('connect-flash');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const User = mongoose.model('User')
-const Admin= mongoose.model('Admin')
+const Admin = mongoose.model('Admin')
 const MongoDBStore = require('connect-mongo');
 const passport = require('passport');
 const localStrategy = require('passport-local');
@@ -27,12 +27,12 @@ const navbarRoutes = require('./routes/navbarRoutes');
 const wholesaleRoutes = require('./routes/wholesaleRoutes');
 const userRoutes = require('./routes/userRoutes');
 const transporter = require('./utils/emailConfig');
- const ExpressError = require('./utils/Expresserror');
+const ExpressError = require('./utils/Expresserror');
 // const { category } = require('./data/index');
 
 // Varibales
 const PORT = 3000;
-const mongoURi = 'mongodb://0.0.0.0:27017/casualOutfit';
+const mongoURi = process.env.MONGO_URI;
 const secret = 'thisisnotagoodsecret';
 const store = new MongoDBStore({
     mongoUrl: mongoURi,
@@ -128,7 +128,7 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
     const { status = 500 } = err;
     if (!err.message) err.message = "Oh No, Something Went Wrong!";
-     res.status(status).render('error', {err});
+    res.status(status).render('error', { err });
 });
 app.locals.transporter = transporter;
 // Listen for the port Number
