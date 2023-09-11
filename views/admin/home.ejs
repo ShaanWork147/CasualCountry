@@ -22,7 +22,7 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <% newArrivals.forEach(product=> { %>
-              <div class="swiper-slide"> <a href="/user/product/<%= product._id %>"> <img class="image-slide"
+              <div class="swiper-slide"> <a href="/user/product/<%= product._id %>"> <img class="image-slide" 
                     src="<%= product.images[0].path %>" alt="<%= product.productTitle %>">
                   <h4>
                     <%= product.productTitle %>
